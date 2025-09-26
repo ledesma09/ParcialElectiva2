@@ -10,14 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Build and Deploy
-      run: |
-        # Configurar Surge.sh
-        npm install --global surge
-        surge token 5b27f140d89ab3138439af5d7ed6e483 
+      - name: Install Surge
+        run: npm install --global surge
 
-        # Desplegar en Surge.sh
-        surge --project ./ --domain ledesma.surge.sh 
+      - name: Deploy to Surge
+        run: surge ./ ledesma.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+
