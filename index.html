@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calendario Menstrual — Rosé</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">R</div>
+      <div>
+        <h1>Calendario Menstrual — Rosé</h1>
+        <p class="lead">Registra tu última menstruación y recibe predicciones bonitas de tu ciclo.</p>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="controls">
+        <div class="row">
+          <div>
+            <label>Fecha de inicio de tu última menstruación</label><br>
+            <input id="lastDate" type="date">
+          </div>
+          <div>
+            <label>Duración del ciclo (días)</label><br>
+            <input id="cycleLength" type="number" min="20" max="40" value="28">
+          </div>
+          <div>
+            <label>Días de sangrado</label><br>
+            <input id="periodLength" type="number" min="1" max="10" value="5">
+          </div>
+          <div>
+            <button class="btn" id="saveBtn">Guardar</button>
+            <button class="btn ghost" id="clearBtn">Limpiar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div class="pill"><div class="label">Siguiente período</div><div id="nextPeriod" class="big">—</div></div>
+        <div class="pill"><div class="label">Ventana fértil</div><div id="fertileRange">—</div></div>
+        <div class="pill"><div class="label">Ovulación estimada</div><div id="ovulationDay">—</div></div>
+      </div>
+    </div>
+
+    <div class="calendar-wrap">
+      <div class="calendar card">
+        <div class="month-nav">
+          <button id="prevMonth" class="btn ghost">‹</button>
+          <div><strong id="monthLabel"></strong><div id="yearLabel"></div></div>
+          <button id="nextMonth" class="btn ghost">›</button>
+        </div>
+        <div class="grid" id="weekdayNames">
+          <div>Lun</div><div>Mar</div><div>Mié</div>
+          <div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
+        </div>
+        <div class="grid" id="daysGrid"></div>
+        <div class="legend">
+          <span><i class="swatch period"></i> Período</span>
+          <span><i class="swatch fertile"></i> Fértil</span>
+          <span><i class="swatch ovulation"></i> Ovulación</span>
+        </div>
+      </div>
+
+      <div class="info card">
+        <h3>Información rápida</h3>
+        <p>La ovulación suele ocurrir ~14 días antes del inicio del siguiente período. La ventana fértil considera 5 días antes hasta 1 día después.</p>
+        <p>Estos cálculos son estimativos. Para más precisión consulta a un profesional de la salud.</p>
+        <hr>
+        <p>Los datos se guardan en tu navegador, de forma privada.</p>
+      </div>
+    </div>
+
+    <footer class="wrap">Hecho con ❤️</footer>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
