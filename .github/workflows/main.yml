@@ -20,4 +20,4 @@ jobs:
         surge token 5b27f140d89ab3138439af5d7ed6e483 
 
         # Desplegar en Surge.sh
-        surge --project ./ --domain ledesma-20221775.surge.sh 
+        surge --project ./ --domain ledesma.surge.sh 
